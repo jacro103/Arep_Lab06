@@ -4,36 +4,27 @@
  */
 package com.mycompany.lab6_arep;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 /**
  *
  * @author jose.correa-r
  */
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
-public class HttpConnectionExample {
-
+public class RemoteLogServiceInvoker {
     private static final String USER_AGENT = "Mozilla/5.0";
-    private static final String GET_URL = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=fb&apikey=Q1QZFVJQ21K7C6XM";
-    private static final String[] LOG_SERVERS = new String[]{
-                                                            "http://logservice1:4567",
-                                                            "http://logservice2:4567",
-                                                            "http://logservice3:4567"
-                                                            };
-    private static int currentServer=0;
-
-    public static String remoteLogCall(String value) throws IOException{
-        System.out.println(LOG_SERVERS[currentServer] + "/log?value=" + value);
-        return remoteHttpCall(LOG_SERVERS[currentServer] + "/log?value=" + value);
-    }
+    private static String get_URL = "";
     
-    public static String remoteHttpCall(String url) throws IOException{
+    public  RemoteLogServiceInvoker(String invokerUrl){
+        get_URL = invokerUrl;
+    }
+    public String Invoke(String[] args) throws IOException {
 
-        URL obj = new URL(url);
+        URL obj = new URL(get_URL);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", USER_AGENT);
@@ -42,13 +33,10 @@ public class HttpConnectionExample {
         int responseCode = con.getResponseCode();
         System.out.println("GET Response Code :: " + responseCode);
         StringBuffer response = new StringBuffer();
-        
         if (responseCode == HttpURLConnection.HTTP_OK) { // success
             BufferedReader in = new BufferedReader(new InputStreamReader(
                     con.getInputStream()));
             String inputLine;
-            
-
             while ((inputLine = in.readLine()) != null) {
                 response.append(inputLine);
             }
@@ -58,15 +46,9 @@ public class HttpConnectionExample {
             System.out.println(response.toString());
         } else {
             System.out.println("GET request not worked");
-            return "404 error";
         }
         System.out.println("GET DONE");
-        rotateRoundRobinServer();
         return response.toString();
     }
-
-    public static void rotateRoundRobinServer(){
-        currentServer = (currentServer + 1) % 3;
-    }
-
-} 
+    
+}

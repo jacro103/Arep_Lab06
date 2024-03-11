@@ -1,5 +1,7 @@
 # AREP-Taller-6
 En este taller se tuvo como objetivo realizar un servidor web utilizando Spark que implementara un algoritmo de balanceador de cargas para conectarse a 3 servicios distintos que escribian en una base de datos mongodb y retornaban las 10 ultimas cadenas almacenadas en la base de datos.
+
+![](./Imagen/a.png)<br>
 # TALLER 6: PATRONES ARQUITECTURALES EN AMAZON WEB SERVICES
 
 ## Para ejecutar el programa
@@ -105,7 +107,7 @@ http://localhost:36000
 mvn site
 ```
 
-![](./Imagen/a.png)<br>
+
 Despues de ejecutar el comando anterior, abra el archivo `index.html` que se encuentra en el directorio `target/site/` con su navegador de preferencia luego búsque la sección **project reports** y haga click en la opción que dice `Project Javadoc` para ver la documentación de la aplicación.
 
 ## Arquitecura de la aplicación 

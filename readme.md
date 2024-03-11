@@ -26,7 +26,7 @@ Es necesario tener instalado maven para compilar y probar los test del programa,
 
 ### Diseño:
 
-En este programa se usa la clase RoundRobinServer de la carpeta AREP-RoundRobin para realizar el manejo de las peticiones GET. Esta clase usa la clase HttpConnectionExample para realizar el llamado a los logservice y estos a su vez llaman a la base de datos para solicitar la informacion que se requiera.
+En este programa se usa la clase RoundRobinServer  para realizar el manejo de las peticiones GET. Esta  la clase HttpConnectionExample para realizar el llamado a los logservice y estos a su vez llaman a la base de datos para solicitar la informacion que se requiera.
 
 ### Implementacion:
 
@@ -62,32 +62,6 @@ Las siguientes instrucciones le permitirán obtener una copia del proyecto en fu
 Ahora utilizaremos el siguiente comando para construir la imagen:<br>
 ### Instalación 🔧
 
-En AREP-RoundRobin:
-Realice los siguientes pasos para clonar el proyecto en su máquina local.
-
-```bash
-git clone https://github.com/ELS4NTA/AREP-LAB-06.git
-cd AREP-LAB-06/
-```
-docker build --tag jacro103/lab04taller .
-```
-
-En AREP-LogService:
-
-```
-docker build --tag jacro103/lab04taller .
-```
-
-Y ahora usando:
-
-```
-docker images
-```
-
-podemos ver las imagenes creadas:<br>
-
-![](./Imagen/DockerImages.png)<br>
-## Ejecutando la aplicación ⚙️
 
 Para la creacion de los contenedores deben usarse los comandos anteriormente mencionados:
 Para ejecutar la aplicación, ejecute los siguientes comandos en la raíz del proyecto.
@@ -173,16 +147,7 @@ docker push jacro103/lab04taller:latest
 ```
 docker push jacro103/lab04taller:latest
 ```
-- Es una instancia de MongoDB que se ejecuta dentro de un contenedor Docker en una máquina virtual EC2. Su función principal es almacenar datos las cadenas de texto que recibe el servicio LogService.
 
-Y las podemos ver en Docker Hub:<br>
-![image](https://github.com/ELS4NTA/AREP-LAB-06/assets/99996670/a172b6c2-c7d3-4bab-8012-e537fc0f0340)
-
-![](./Images/DockerHub.png)<br>
-## Versionado 📌
-
-Los repositorios donde estan subidas son:
-  ![AREP LAB 06](https://img.shields.io/badge/AREP_LAB_06-v1.0.0-blue)
 
 ```
 https://hub.docker.com/r/jacro103/lab04taller
@@ -195,5 +160,3 @@ https://hub.docker.com/r/jacro103/lab04taller
 
 ## Autor
 Jose Alejandro Correa Rodriguez
-- Al profesor [Luis Daniel Benavides Navarro](https://ldbn.is.escuelaing.edu.co/) por compartir sus conocimientos.
-- Al monitor que revisó el laboratorio.

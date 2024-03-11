@@ -68,24 +68,7 @@ docker network create Arep_Lab06
 docker run -d -p 36000:4568 --name roundrobinserver --network Arep_Lab06 jacro103/lab04taller
 ```
 
-```
-docker run -d -p 36001:4567 --name logservice1 --network Arep_Lab06 jacro103/lab04taller
-```
 
-```
-docker run -d -p 36002:4567 --name logservice2 --network Arep_Lab06 jacro103/lab04taller
-```
-
-```
-docker run -d -p 36003:4567 --name logservice3 --network Arep_Lab06 jacro103/lab04taller
-```
-
-```
-docker run -d -p 27017:27017 -v mongodb:/data/db -v mongodb_config:/data/configdb --name db --network Arep_Lab06 mongo:3.6.1 mongod
-```bash
-mvn clean install
-docker-compose up -d
-```
 
 Y usando el siguiente comando verificamos el estado de los contenedores:
 El anterior comando limpiará las contrucciones previas, compilará y luego ejecutará en distintos contenedores los servicios de la aplicación.
@@ -140,15 +123,6 @@ docker push jacro103/lab04taller:latest
 
 ```
 docker push jacro103/lab04taller:latest
-```
-
-
-```
-https://hub.docker.com/r/jacro103/lab04taller
-```
-
-```
-https://hub.docker.com/r/jacro103/lab04taller
 ```
 
 

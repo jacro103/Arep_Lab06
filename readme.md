@@ -105,7 +105,7 @@ http://localhost:36000
 mvn site
 ```
 
-![](./Imagen/RoundRobinServerBrowser.png)<br>
+![](./Imagen/a.png)<br>
 Despues de ejecutar el comando anterior, abra el archivo `index.html` que se encuentra en el directorio `target/site/` con su navegador de preferencia luego búsque la sección **project reports** y haga click en la opción que dice `Project Javadoc` para ver la documentación de la aplicación.
 
 ## Arquitecura de la aplicación 

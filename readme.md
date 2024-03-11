@@ -35,21 +35,14 @@ En este programa se usa la clase RoundRobinServer  para realizar el manejo de la
 Para empezar tenemos la clase RounRobinServer.java que recibe las peticiones y retorna la pagina principal o utiliza la clase HttpConnectionExample.java para realizar las peticiones a alguno de los servicios.<br>
 Este laboratorio explora patrones arquitecutrales en Amazon Web Services (AWS) y su implementación en aplicaciones web. La aplicación web es un servicio de log que almacena cadenas de texto y las muestra en una página web. Utiliza el framework [SparkJava](https://sparkjava.com/) para crear servicios REST y el motor de base de datos [MongoDB](https://www.mongodb.com/) para almacenar datos. Estos se ejecutan en contenedores Docker y se despliega en una instancia EC2 de AWS.
 
-![](./Imagen/RoundRobinServer.png)<br>
 
-La clase HttpConcetionExample.java utiliza un algoritmo RoundRobin de balanceo de cargas:<br>
-https://github.com/ELS4NTA/AREP-LAB-06/assets/99996670/57d031da-e44a-4ad4-a87d-64313853845a
-
-![](./Imagen/Httpconnection.png)<br>
-
-Esta clase se intentara conectar con uno de los servicios y acto seguido cambiara el siguiente servicio al que se conectara para hacer efectivo el algoritmo de balanceo de cargas.<br>
-## Comenzando 🚀
+## Comenzando 
 
 La clase LogService.java registra el valor recibido en la base de datos para luego llamar los ultimos 10 valores que hayan sido registrados:<br>
 Las siguientes instrucciones le permitirán obtener una copia del proyecto en funcionamiento en su máquina local para fines de desarrollo y prueba.
 
 ![](./Imagen/LogService.png)<br>
-### Requisitos 📋
+### Requisitos 
 
 - [Git](https://git-scm.com/) - Control de versiones
 - [Maven](https://maven.apache.org/) - Gestor de dependencias
@@ -60,8 +53,7 @@ Las siguientes instrucciones le permitirán obtener una copia del proyecto en fu
 > [!IMPORTANT]
 > Es necesario tener instalado Git, Maven, Docker y Java 17 para poder ejecutar el proyecto.
 Ahora utilizaremos el siguiente comando para construir la imagen:<br>
-### Instalación 🔧
-
+### Instalación 
 
 Para la creacion de los contenedores deben usarse los comandos anteriormente mencionados:
 Para ejecutar la aplicación, ejecute los siguientes comandos en la raíz del proyecto.
@@ -102,7 +94,7 @@ docker ps -a
 Diríjase a su navegador de preferencia y vaya a la siguiente dirección: [http://localhost:8080](http://localhost:8080) para ver la aplicación en funcionamiento.
 
 ![](./Imagen/DockerContainers.png)<br>
-## Generando Javadoc 📦
+## Generando Javadoc 
 
 Y ahora accedemos a la siguiente url y verificamos el estado del contenedor del servidor RoundRobin:
 Para generar la documentación de la aplicación, ejecute el siguiente comando, los archivos Javadoc se generarán en el directorio `target/site/apidocs` dentro del proyecto.
@@ -116,7 +108,7 @@ mvn site
 ![](./Imagen/RoundRobinServerBrowser.png)<br>
 Despues de ejecutar el comando anterior, abra el archivo `index.html` que se encuentra en el directorio `target/site/` con su navegador de preferencia luego búsque la sección **project reports** y haga click en la opción que dice `Project Javadoc` para ver la documentación de la aplicación.
 
-## Arquitecura de la aplicación 📐
+## Arquitecura de la aplicación 
 
 Tambien podemos validar la creacion en la aplicacion Docker Desktop:
 La aplicación que describes tiene varios componentes interconectados

@@ -15,11 +15,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Sorts;
 
-/**
- * Utility class for MongoDB operations.
- * 
- * @author Daniel Santanilla
- */
+
 public class MongoUtil {
 
     private static final String CONNECTION_STRING = "mongodb://mongodatabase:27017/";
@@ -28,11 +24,7 @@ public class MongoUtil {
     private MongoClient mongoClient;
     private MongoCollection<Document> logsCollection;
 
-    /**
-     * Adds a new log entry to the database.
-     *
-     * @param message the log message
-     */
+
     public void addLog(String message) {
         this.connect();
         Document newLog = new Document("message", message).append("issuedAt", LocalDateTime.now());
@@ -41,11 +33,7 @@ public class MongoUtil {
         this.close();
     }
 
-    /**
-     * Retrieves the latest 10 log entries from the database.
-     *
-     * @return a list of log entries as strings
-     */
+
     public List<String> getLogs() {
         this.connect();
         List<String> logs = new ArrayList<>();
@@ -54,18 +42,14 @@ public class MongoUtil {
         return logs;
     }
 
-    /**
-     * Connects to the MongoDB server and initializes the necessary collections.
-     */
+
     private void connect() {
         this.mongoClient = MongoClients.create(new ConnectionString(CONNECTION_STRING));
         MongoDatabase database = mongoClient.getDatabase(DATABASE_NAME);
         this.logsCollection = database.getCollection("logs");
     }
 
-    /**
-     * Closes the connection to the MongoDB server.
-     */
+  
     private void close() {
         this.mongoClient.close();
     }

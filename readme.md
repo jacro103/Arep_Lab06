@@ -127,3 +127,6 @@ docker push jacro103/lab04taller:latest
 
 ## Autor
 Jose Alejandro Correa Rodriguez
+
+##Video
+[video](https://pruebacorreoescuelaingeduco-my.sharepoint.com/:v:/g/personal/jose_correa-r_mail_escuelaing_edu_co/EShSglGmi8lLuS9zhfGIZtUBTMWLHmw7jI8Y7x0i72xHww?e=KP1lKa&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D).<br>

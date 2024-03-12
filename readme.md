@@ -2,7 +2,6 @@
 En este taller se tuvo como objetivo realizar un servidor web utilizando Spark que implementara un algoritmo de balanceador de cargas para conectarse a 3 servicios distintos que escribian en una base de datos mongodb y retornaban las 10 ultimas cadenas almacenadas en la base de datos.
 
 ![](./Imagen/a.png)<br>
-# TALLER 6: PATRONES ARQUITECTURALES EN AMAZON WEB SERVICES
 
 ## Para ejecutar el programa
 ## Descripción de la aplicación

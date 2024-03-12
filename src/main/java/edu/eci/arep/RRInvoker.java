@@ -13,15 +13,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * The `RRInvoker` class is responsible for invoking a round-robin log service.
- * It sends a GET request to the log service URLs in a round-robin fashion and
- * retrieves the response.
- * The class also provides a method to generate the log service URLs based on a
- * list of ports.
- *
- * @author Daniel Santanilla
- */
+
 public class RRInvoker {
 
     private static final String USER_AGENT = "Mozilla/5.0";
@@ -31,18 +23,11 @@ public class RRInvoker {
     private static final Logger LOGGER = LoggerFactory.getLogger(RRInvoker.class);
     private static int currentLogService = 0;
 
-    /**
-     * Private constructor to prevent instantiation of this class.
-     */
+
     private RRInvoker() {
     }
 
-    /**
-     * Generates a list of URLs based on the given list of ports.
-     *
-     * @param ports the list of ports to generate URLs for
-     * @return a list of URLs generated from the given ports
-     */
+
     private static List<String> generateUrls() {
         List<String> urls = new ArrayList<>();
         for (int i = 0; i < PORTS.size(); i++) {
@@ -51,13 +36,7 @@ public class RRInvoker {
         return urls;
     }
 
-    /**
-     * Invokes a GET request to a specified URL and returns the response as a
-     * string.
-     *
-     * @return The response from the GET request as a string.
-     * @throws IOException If an I/O error occurs while making the GET request.
-     */
+
     public static String invoke(String message) throws IOException {
         URL logService = getLogServiceUrl(message);
         LOGGER.info("GET {}", logService);
@@ -86,12 +65,7 @@ public class RRInvoker {
         return response.toString();
     }
 
-    /**
-     * Returns the URL for the current log service.
-     *
-     * @return the URL for the current log service
-     * @throws MalformedURLException if the URL is malformed
-     */
+
     private static URL getLogServiceUrl(String message) throws MalformedURLException {
         // Get the URL for the current index
         String getUrl = LOG_SERVICE_URLS.get(currentLogService);

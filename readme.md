@@ -33,16 +33,14 @@ En este programa se usa la clase RoundRobinServer  para realizar el manejo de la
 
 #### Desarrollo servidor:
 
-Para empezar tenemos la clase RounRobinServer.java que recibe las peticiones y retorna la pagina principal o utiliza la clase HttpConnectionExample.java para realizar las peticiones a alguno de los servicios.<br>
+Para empezar tenemos las clase creadas en clase y las clases para que funcioe la instancia .java que recibe las peticiones y retorna la pagina principal o utiliza la clase HttpConnectionExample.java para realizar las peticiones a alguno de los servicios.<br>
 Este laboratorio explora patrones arquitecutrales en Amazon Web Services (AWS) y su implementación en aplicaciones web. La aplicación web es un servicio de log que almacena cadenas de texto y las muestra en una página web. Utiliza el framework [SparkJava](https://sparkjava.com/) para crear servicios REST y el motor de base de datos [MongoDB](https://www.mongodb.com/) para almacenar datos. Estos se ejecutan en contenedores Docker y se despliega en una instancia EC2 de AWS.
 
 
 ## Comenzando 
 
-La clase LogService.java registra el valor recibido en la base de datos para luego llamar los ultimos 10 valores que hayan sido registrados:<br>
-Las siguientes instrucciones le permitirán obtener una copia del proyecto en funcionamiento en su máquina local para fines de desarrollo y prueba.
+La clase LogService.java registra el valor recibido en la base de datos para luego llamar los ultimos 10 valores que hayan sido registrados
 
-![](./Imagen/LogService.png)<br>
 ### Requisitos 
 
 - [Git](https://git-scm.com/) - Control de versiones
@@ -97,8 +95,6 @@ Despues de ejecutar el comando anterior, abra el archivo `index.html` que se enc
 Tambien podemos validar la creacion en la aplicacion Docker Desktop:
 La aplicación que describes tiene varios componentes interconectados
 
-![](./Imagen/DockerDesktop.png)
-**Aplicación web APP-LB-RoundRobin:**
 
 Ahora subiremos la imagen a un repositorio en la web de [Docker](https://www.docker.com).<br>
 - Está compuesta por un cliente web y al menos un servicio REST.
@@ -106,23 +102,6 @@ Ahora subiremos la imagen a un repositorio en la web de [Docker](https://www.doc
 - Cuando un usuario envía un mensaje, el cliente web lo envía al servicio REST.
 - El servicio REST procesa el mensaje y actualiza la pantalla del cliente web con la información devuelta en formato JSON.
 - Implementa un algoritmo de balanceo de cargas de Round Robin para distribuir la carga entre tres instancias del servicio LogService.
-
-Para empezar crearemos un repositorio para cada imagen, en este caso un se llamara "roundrobinserver" y el otro "logservice".<br>
-**LogService:**
-
-Y ahora haremos push para subir las imagenes al repositorio:<br>
-- Es un servicio REST que recibe cadenas de texto.
-- Almacena estas cadenas en la base de datos MongoDB.
-- Responde con un objeto JSON que contiene las 10 últimas cadenas almacenadas y sus fechas correspondientes.
-
-```
-docker push jacro103/lab04taller:latest
-```
-**Servicio MongoDB:**
-
-```
-docker push jacro103/lab04taller:latest
-```
 
 
 ## Autor
